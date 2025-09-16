@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Storage - CodeVault</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>CodeVault</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="multi-language.html">Multi-Language</a>
+    <a href="secure-storage.html" class="active-page">Secure Storage</a>
+  </nav>
+</header>
+
+<!-- Profile Card -->
+<section class="profile-card">
+  <img id="profileAvatar" src="https://via.placeholder.com/100" alt="Profile" class="profile-avatar">
+  <h2 id="profileName">Ayush Singh</h2>
+  <p id="profileWork">💻 Full-stack Developer | 🚀 Loves solving problems</p>
+  
+  <div class="stats">
+    <span>Snippets: <span id="totalSnippets">0</span></span> | 
+    <span>Public: <span id="publicSnippets">0</span></span> | 
+    <span>Private: <span id="privateSnippets">0</span></span>
+  </div>
+
+  <button id="editProfileBtn" class="btn-primary">✏️ Edit Profile</button>
+</section>
+
+<!-- Snippet Dashboard -->
+<section class="snippets-dashboard">
+  <div class="repo-header">
+    <h2>Your Snippets</h2>
+    <button id="addSnippetBtn" class="btn-primary">+ Add New Snippet</button>
+  </div>
+
+  <!-- Filters -->
+  <div class="snippet-filters">
+    <input type="text" id="searchBox" placeholder="🔍 Search snippets...">
+    <select id="filterVisibility">
+      <option value="all">All</option>
+      <option value="Public">Public</option>
+      <option value="Private">Private</option>
+    </select>
+  </div>
+
+  <table class="snippet-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Visibility</th>
+        <th>Created</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="snippetTableBody">
+      <!-- Snippets will load here -->
+    </tbody>
+  </table>
+</section>
+
+<!-- Add/Edit Snippet Modal -->
+<div id="snippetModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modalTitle">Add New Snippet</h2>
+    <label>Snippet Name</label>
+    <input type="text" id="snippetName" placeholder="Enter snippet name">
+
+    <label>Snippet Code</label>
+    <textarea id="snippetCode" placeholder="Write your code here..."></textarea>
+
+    <label>Visibility</label>
+    <select id="snippetVisibility">
+      <option value="Public">Public</option>
+      <option value="Private">Private</option>
+    </select>
+
+    <button id="saveSnippetBtn">Save Snippet</button>
+  </div>
+</div>
+
+<!-- View Snippet Modal -->
+<div id="viewSnippetModal" class="modal">
+  <div class="modal-content">
+    <span class="close-view">&times;</span>
+    <h2 id="viewSnippetTitle">Snippet Title</h2>
+    <p id="viewSnippetLang">🌐 Language: JavaScript</p>
+    <pre class="code-block"><code id="viewSnippetCode">
+// Snippet code will appear here
+    </code></pre>
+  </div>
+</div>
+
+<!-- Profile Edit Modal -->
+<div id="profileModal" class="modal">
+  <div class="modal-content">
+    <span class="close-profile">&times;</span>
+    <h2>Edit Profile</h2>
+
+    <label>Name</label>
+    <input type="text" id="editName" placeholder="Enter your name">
+
+    <label>Work / Bio</label>
+    <input type="text" id="editWork" placeholder="Enter your work or bio">
+
+    <label>Profile Image URL</label>
+    <input type="text" id="editAvatar" placeholder="Enter image URL">
+
+    <button id="saveProfileBtn" class="btn-primary">Save Profile</button>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 CodeVault | All Rights Reserved</p>
+</footer>
+
+<!-- Scripts -->
+<script defer src="secure-storage.js"></script>
+</body>
+</html>

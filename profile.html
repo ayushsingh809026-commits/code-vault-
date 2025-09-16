@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile - CodeVault</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="auth.js" defer></script>
+  <style>
+    .profile-container{ max-width:720px; margin:60px auto; padding:24px; border-radius:12px; background:rgba(255,255,255,0.02); color:#cfe7ff; }
+    .profile-grid{ display:grid; grid-template-columns:120px 1fr; gap:16px; align-items:start; }
+    .avatar-preview{ width:110px; height:110px; border-radius:12px; background:#0f2230; display:flex; align-items:center; justify-content:center; font-weight:700; color:#9be1ff; font-size:1.4rem; overflow:hidden; }
+    .profile-actions{ margin-top:16px; display:flex; gap:12px; }
+    .small-note{ color:#9fcfff; font-size:0.95rem; margin-top:8px; }
+    label{ display:block; margin-top:8px; font-size:0.95rem; color:#bfe9ff; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">CodeVault</a>
+      <div id="userMenuContainer" class="nav-right"></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="profile-container" aria-labelledby="profileHeading">
+      <h2 id="profileHeading">Your Profile</h2>
+      <div class="profile-grid">
+        <div>
+          <div id="avatarPreview" class="avatar-preview">U</div>
+          <p class="small-note">You can provide an image URL to use as your avatar. If the URL is invalid, initials will be shown.</p>
+        </div>
+        <div>
+          <form id="profileForm" novalidate>
+            <label for="p_name">Full name</label>
+            <input id="p_name" name="p_name" type="text" required minlength="2" />
+
+            <label for="p_email">Email (unchangeable)</label>
+            <input id="p_email" name="p_email" type="email" readonly />
+
+            <label for="p_image">Profile image URL (optional)</label>
+            <input id="p_image" name="p_image" type="url" placeholder="https://example.com/avatar.jpg" />
+
+            <div style="margin-top:12px; padding-top:8px; border-top:1px dashed rgba(255,255,255,0.03)">
+              <label for="old_pass">Current password (required to change password)</label>
+              <input id="old_pass" name="old_pass" type="password" placeholder="Leave blank to keep password" />
+
+              <label for="new_pass">New password</label>
+              <input id="new_pass" name="new_pass" type="password" />
+
+              <label for="new_pass_confirm">Confirm new password</label>
+              <input id="new_pass_confirm" name="new_pass_confirm" type="password" />
+            </div>
+
+            <div class="profile-actions">
+              <button type="submit" class="btn btn-manage">Save changes</button>
+              <button type="button" onclick="location.href='working.html'" class="btn">Back</button>
+            </div>
+            <p id="profileMsg" class="small-note"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

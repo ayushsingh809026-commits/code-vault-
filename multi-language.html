@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Language Support</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/dracula.min.css">
+</head>
+<body>
+
+<header>
+    <h1>CodeVault</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="#">Login</a>
+        <a href="#">Signup</a>
+    </nav>
+</header>
+
+<section class="features-page">
+    <h2>Multi-Language Code Editor</h2>
+    <p>Select a language and start typing your code:</p>
+
+    <div class="editor-container">
+        <label for="languageSelect">Choose Language:</label>
+        <select id="languageSelect">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="text/x-c++src">C++</option>
+            <option value="text/x-java">Java</option>
+            <option value="xml">HTML</option>
+        </select>
+
+        <textarea id="codeEditor">// Start typing your code here...</textarea>
+
+       
+        <div class="editor-actions">
+            <button id="copyCode">📋 Copy</button>
+            <button id="downloadCode">⬇️ Download</button>
+            <button id="shareCode">🔗 Share</button>
+            <button id="saveCode">💾 Save</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 CodeVault. All rights reserved.</p>
+</footer>
+
+<!-- CodeMirror JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/javascript/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/clike/clike.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/xml/xml.min.js"></script>
+
+<!-- Custom JS -->
+<script src="multi-language.js"></script>
+
+</body>
+</html>
